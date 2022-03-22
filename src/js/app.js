@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {}
-  }
+import AllMeetUpsPage from '../pages/AllMeetUps'
+import FavouritesPage from '../pages/Favourites'
+import NewMeetUpPage from '../pages/NewMeetUp'
 
-  render() {
-    const { stateObjects } = this.state
+function App() {
+  // localhost:3000/
+  // my-page.com/
 
-    return <div>hey peoples</div>
-  }
+  return (
+    <Routes>
+      <Route path="/" element={<AllMeetUpsPage />} />
+      <Route path="/new-meetup" element={<NewMeetUpPage />} />
+      <Route path="/favourites" element={<FavouritesPage />} />
+    </Routes>
+  )
 }
 
 export default App
