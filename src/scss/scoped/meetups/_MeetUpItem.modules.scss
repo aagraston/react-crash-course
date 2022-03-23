@@ -30,19 +30,4 @@
 .actions {
   padding: 1.5rem;
   text-align: center;
-
-  button {
-    font: inherit;
-    cursor: pointer;
-    color: $color-red;
-    border: 1px solid $color-red;
-    background-color: transparent;
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-
-    &:hover,
-    &:active {
-      background-color: rgba($color-gray, 0.1);
-    }
-  }
 }

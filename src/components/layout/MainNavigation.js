@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import classes from '../../scss/scoped/_MainNavigation.module.scss'
+import classes from '../../scss/scoped/layout/_MainNavigation.module.scss'
 
 function MainNavigation() {
   return (

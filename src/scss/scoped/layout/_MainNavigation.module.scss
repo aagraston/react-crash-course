@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../../variables';
 
 .header {
   display: flex;
@@ -28,5 +28,6 @@
 
 .logo {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 3rem;
+  color: white;
 }
