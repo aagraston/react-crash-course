@@ -1,0 +1,32 @@
+@import '../variables';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spc-20 $spc-75 $spc-20 $spc-75;
+  background-color: $color-red;
+  color: $color-white;
+  font-weight: 500;
+  font-size: 20px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: $spc-50;
+    list-style-type: none;
+    li {
+      a {
+        all: unset;
+      }
+    }
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 30px;
+}
