@@ -56,6 +56,7 @@ module.exports = {
       { directory: path.join(__dirname, 'dist/js') },
       { directory: path.join(__dirname, 'dist/html') },
     ],
+    historyApiFallback: true,
     open: true,
   },
   watch: true,
