@@ -1,30 +1,48 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MeetUpList from '../components/meetups/MeetUpList'
 
-const DUMMY_DATA = [
-  {
-    id: 'm1',
-    title: 'Nepal Railway',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/1/1b/Abandoned_Train_at_Janakpur_station%2C_Nepal_Railways--IMG_7925.jpg',
-    address: 'Railway place, 5672 Nepal',
-    description: 'This is a meeting spot for drug deals, plain and simple.',
-  },
-  {
-    id: 'm2',
-    title: 'The Posh Park',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/c/cf/Posh_picnic_at_Wentworth_Castle_-_geograph.org.uk_-_3066941.jpg',
-    address: 'Posh way, 1234 Fan City',
-    description: 'This is most certainly not a meeting place for drug deals.',
-  },
-]
-
 function AllMeetUpsPage() {
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadedMeetups, setLoadedMeetups] = useState([])
+
+  useEffect(() => {
+    setIsLoading(true)
+    //default is get request
+    fetch(
+      'https://react-crash-course-project-default-rtdb.firebaseio.com/meetups.json'
+    )
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        const meetups = []
+
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          }
+
+          meetups.push(meetup)
+        }
+
+        setIsLoading(false)
+        setLoadedMeetups(meetups)
+      })
+  }, [])
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    )
+  }
+
   return (
     <section>
       <h1>All Meet Ups Page</h1>
-      <MeetUpList meetups={DUMMY_DATA} />
+      <MeetUpList meetups={loadedMeetups} />
     </section>
   )
 }
