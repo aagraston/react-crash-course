@@ -21,6 +21,12 @@
     li {
       a {
         all: unset;
+        span {
+          font-weight: bold;
+          background-color: rgba(#000000, 0.2);
+          padding: 5px;
+          border-radius: 3px;
+        }
       }
     }
   }

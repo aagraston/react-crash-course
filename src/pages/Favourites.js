@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import FavouritesContext from '../store/favourites-context'
-import { useContext } from 'react/cjs/react.development'
 
 import MeetUpList from '../components/meetups/MeetUpList'
 
 function FavouritesPage() {
-  favouritesCtx = useContext(FavouritesContext)
+  const favouritesCtx = useContext(FavouritesContext)
 
   //for if there are no favourites
   let content

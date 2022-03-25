@@ -5,7 +5,7 @@ import classes from '../../scss/scoped/layout/_MainNavigation.module.scss'
 import FavouritesContext from '../../store/favourites-context'
 
 function MainNavigation() {
-  favouritesCtx = useContext(FavouritesContext)
+  const favouritesCtx = useContext(FavouritesContext)
 
   return (
     <header className={classes.header}>
@@ -19,8 +19,9 @@ function MainNavigation() {
             <Link to="/new-meetup">New Meetup</Link>
           </li>
           <li>
-            <Link to="/favourites">Favourites</Link>
-            <p>{favouritesCtx.totalFavourites}</p>
+            <Link to="/favourites">
+              Favourites <span>{favouritesCtx.totalFavourites}</span>
+            </Link>
           </li>
         </ul>
       </nav>

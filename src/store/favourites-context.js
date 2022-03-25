@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 const FavouritesContext = createContext({
   favourites: [],
@@ -9,7 +9,7 @@ const FavouritesContext = createContext({
 })
 
 export function FavouritesContextProvider(props) {
-  const [userFavourites, setUserFavourites] = useState()
+  const [userFavourites, setUserFavourites] = useState([])
 
   const context = {
     favourites: userFavourites,
@@ -49,7 +49,7 @@ export function FavouritesContextProvider(props) {
 
   return (
     <FavouritesContext.Provider value={context}>
-      {props.chilrden}
+      {props.children}
     </FavouritesContext.Provider>
   )
 }
